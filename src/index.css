@@ -1,0 +1,202 @@
+/* Google Fonts  
+  @import statements must come before @import "tailwindcss" — CSS requires all @imports to be at the very top of the file, otherwise they are ignored by the browser.
+*/
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Edu+SA+Beginner&family=Roboto+Mono&display=swap");
+
+@import "tailwindcss";
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-richblack-900);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-richblack-500);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-richblack-400);
+}
+
+@theme {
+  /* Font Families */
+  --font-inter: "Inter", sans-serif;
+  --font-edu-sa: "Edu SA Beginner", cursive;
+  --font-mono: "Roboto Mono", monospace;
+
+  /* shadows */
+  --shadow-card: 4px 4px 0px 0px rgba(115, 115, 115, 0.3);
+  --shadow-card-1: 20px 20px 0px 4px rgba(249, 250, 251, 0.8);
+  --shadow-card-4: 10px 10px 0px 4px rgba(249, 250, 251, 0.8);
+  --shadow-card-5: -10px -10px 0px 4px rgba(249, 250, 251, 0.8);
+  --shadow-card-2: -20px -20px 0px 4px rgba(249, 250, 251, 0.8);
+  --shadow-card-3: 10px 10px 0px 4px rgba(249, 250, 251, 0.8);
+  --shadow-image: 8px 8px 0px 0px rgba(0, 0, 0, 0.1);
+  --shadow-image-1: 0px 0px 10px 6px rgba(212, 83, 126, 0.35);
+  --shadow-image-2: 20px 20px 0px 4px rgba(71, 165, 197, 1.0);
+  
+  /* Colors */
+  --color-white: #fff;
+  --color-black: #000;
+  --color-transparent: #ffffff00;
+
+  /* Color Scale — richblack */
+  --color-richblack-5: #f1f2ff;
+  --color-richblack-25: #dbddea;
+  --color-richblack-50: #c5c7d4;
+  --color-richblack-100: #afb2bf;
+  --color-richblack-200: #999daa;
+  --color-richblack-300: #838894;
+  --color-richblack-400: #6e727f;
+  --color-richblack-500: #585d69;
+  --color-richblack-600: #424854;
+  --color-richblack-700: #2c333f;
+  --color-richblack-800: #161d29;
+  --color-richblack-900: #000814;
+
+  /* Color Scale — richblue */
+  --color-blue-5: #eaf5ff;
+  --color-blue-25: #84daec;
+  --color-blue-50: #7ec0d9;
+  --color-blue-100: #47a5c5;
+  --color-blue-200: #118ab2;
+  --color-blue-300: #0f7a9d;
+  --color-blue-400: #0c6a87;
+  --color-blue-500: #0a5a72;
+  --color-blue-600: #074b5d;
+  --color-blue-700: #053b48;
+  --color-blue-800: #022b32;
+  --color-blue-900: #001b1d;
+
+  /* Color Scale — caribbeangreen */
+  --color-caribbeangreen-5: #c1fffd;
+  --color-caribbeangreen-25: #83f1de;
+  --color-caribbeangreen-50: #44e4bf;
+  --color-caribbeangreen-100: #06d6a0;
+  --color-caribbeangreen-200: #05bf8e;
+  --color-caribbeangreen-300: #05a77b;
+  --color-caribbeangreen-400: #049069;
+  --color-caribbeangreen-500: #037957;
+  --color-caribbeangreen-600: #026144;
+  --color-caribbeangreen-700: #014a32;
+  --color-caribbeangreen-800: #01321f;
+  --color-caribbeangreen-900: #001b0d;
+
+  /* Color Scale — brown */
+  --color-brown-5: #fff4c4;
+  --color-brown-25: #ffe395;
+  --color-brown-50: #ffd16f;
+  --color-brown-100: #e7bc5b;
+  --color-brown-200: #cfa64f;
+  --color-brown-300: #b89144;
+  --color-brown-400: #a07c39;
+  --color-brown-500: #88662d;
+  --color-brown-600: #705122;
+  --color-brown-700: #593c17;
+  --color-brown-800: #41260b;
+  --color-brown-900: #291100;
+
+  /* Color Scale — pink */
+  --color-pink-5: #fff1f1;
+  --color-pink-25: #fbc7d1;
+  --color-pink-50: #f79cb0;
+  --color-pink-100: #f37290;
+  --color-pink-200: #ef476f;
+  --color-pink-300: #d43d63;
+  --color-pink-400: #ba3356;
+  --color-pink-500: #9f294a;
+  --color-pink-600: #841e3e;
+  --color-pink-700: #691432;
+  --color-pink-800: #4f0a25;
+  --color-pink-900: #340019;
+
+  /* Color Scale — yellow */
+  --color-yellow-5: #fff970;
+  --color-yellow-25: #ffe83d;
+  --color-yellow-50: #ffd60a;
+  --color-yellow-100: #e7c009;
+  --color-yellow-200: #cfab08;
+  --color-yellow-300: #b69507;
+  --color-yellow-400: #9e8006;
+  --color-yellow-500: #866a04;
+  --color-yellow-600: #6e5503;
+  --color-yellow-700: #553f02;
+  --color-yellow-800: #3d2a01;
+  --color-yellow-900: #251400;
+
+  /* Color Scale — pure-greys */
+  --color-pure-greys-5: #f9f9f9;
+  --color-pure-greys-25: #e2e2e2;
+  --color-pure-greys-50: #cccccc;
+  --color-pure-greys-100: #b5b5b5;
+  --color-pure-greys-200: #9e9e9e;
+  --color-pure-greys-300: #888888;
+  --color-pure-greys-400: #717171;
+  --color-pure-greys-500: #5b5b5b;
+  --color-pure-greys-600: #444444;
+  --color-pure-greys-700: #2d2d2d;
+  --color-pure-greys-800: #171717;
+  --color-pure-greys-900: #141414;
+
+  /* ─── Spacing ─── */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+
+  /* ─── Border Radius ─── */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-full: 9999px;
+
+  /* ─── Font Sizes ─── */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-4xl: 2.25rem;
+
+  /* ─── Shadows ─── */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.5);
+
+  /* Max Width (from extend) */
+  --container-maxContent: 1260px;
+  --container-maxContentTab: 650px;
+}
+
+@utility spinner {
+  width: 50px;
+  --b: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  padding: 1px;
+  background: conic-gradient(#0000 10%, #47a5c5) content-box;
+  -webkit-mask: repeating-conic-gradient(#0000 0deg, #000 1deg 20deg, #0000 21deg 36deg),
+    radial-gradient(farthest-side, #0000 calc(100% - var(--b) - 1px), #000 calc(100% - var(--b)));
+  -webkit-mask-composite: destination-in;
+  mask-composite: intersect;
+  animation: s4 1s infinite linear;
+}
+
+@keyframes s4 {
+  to {
+    transform: rotate(1turn);
+  }
+}
