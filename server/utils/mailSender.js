@@ -19,7 +19,6 @@ const mailSender = async (email, title, body, textBody = "") => {
       text: textBody || undefined,
     });
 
-    console.log("information", info);
     return info;
   } catch (error) {
     console.log(error.message);

@@ -22,13 +22,6 @@ export function getUserDetails(token, navigate) {
             : token;
       }
 
-      console.log(
-        "[profileAPI] getUserDetails - token:",
-        token,
-        "normalized:",
-        normalizedToken,
-      );
-
       const response = await apiConnector("GET", GET_USER_DETAILS_API, null, {
         Authorization: `Bearer ${normalizedToken}`,
       });
@@ -68,13 +61,6 @@ export async function getUserEnrolledCourses(token) {
           ? token.slice(1, -1)
           : token;
     }
-
-    console.log(
-      "[profileAPI] getUserEnrolledCourses - token:",
-      token,
-      "normalized:",
-      normalizedToken,
-    );
 
     const response = await apiConnector(
       "GET",

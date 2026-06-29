@@ -98,11 +98,6 @@ exports.verifyPayment = async (req, res) => {
     .createHmac("sha256", process.env.RAZORPAY_SECRET)
     .update(body.toString())
     .digest("hex");
-
-  console.log("Expected:", expectedSignature);
-  console.log("Received:", razorpay_signature);
-  console.log("Match:", expectedSignature === razorpay_signature);
-
   if (expectedSignature === razorpay_signature) {
     try {
       await enrollStudents(courses, userId);

@@ -13,7 +13,6 @@ const ContactUsForm = () => {
   } = useForm()
 
   const handleSubmitForm = async (data) => {
-    console.log("Logging Data", data)
     try {
       const response = await apiConnector(
         "POST",
@@ -23,7 +22,6 @@ const ContactUsForm = () => {
           name: `${data.firstName} ${data.lastName}`,
         },
       )
-      console.log("Logging response", response)
     } catch (error) {
       console.log("Error: ", error.message)
     }

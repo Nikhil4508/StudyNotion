@@ -34,8 +34,6 @@ exports.sendOTP = async (req, res) => {
 
     otp = String(otp || Math.floor(100000 + Math.random() * 900000)).trim();
 
-    console.log("OTP IS : ", otp, "LEN:", otp.length);
-
     //check unique otp or not
     let result = await OTP.findOne({ otpValue: otp });
 
@@ -57,7 +55,6 @@ exports.sendOTP = async (req, res) => {
     //create a new otp entry in database
     try {
       const otpBody = await OTP.create(otpPayload);
-      console.log("otp body is: ", otpBody);
     } catch (dbError) {
       console.log(
         "OTP persistence failed, falling back to memory store: ",
@@ -166,7 +163,6 @@ exports.signUp = async (req, res) => {
       const recentOtp = await OTP.find({ email })
         .sort({ createdAt: -1 })
         .limit(1);
-      console.log("recent otp :", recentOtp);
 
       if (recentOtp.length == 0) {
         return res.status(400).json({

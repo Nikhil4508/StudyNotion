@@ -22,8 +22,6 @@ export function sendOtp(email, navigate) {
         email,
         checkUserPresent: true,
       });
-      console.log("sendotp api response......", response);
-      console.log(response.data.success);
 
       if (!response.data.success) {
         throw new Error(response.data.message);
@@ -92,8 +90,6 @@ export function login(email, password, navigate) {
         email,
         password,
       });
-
-      console.log("LOGIN API RESPONSE.......", response);
 
       if (!response.data.success) {
         throw new Error(response.data.message);
