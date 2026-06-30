@@ -1,13 +1,14 @@
 import { useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
 import Sidebar from "../components/core/DashboardPage/Sidebar";
+import Spinner from "../components/common/Spinner";
 
 const Dashboard = () => {
   const { loading: authLoading } = useSelector((state) => state.auth);
   const { loading: profileLoading } = useSelector((state) => state.profile);
 
   if (profileLoading || authLoading) {
-    return <div className="mt-10 mx-auto">Loading...</div>;
+    return <Spinner />;
   }
 
   return (

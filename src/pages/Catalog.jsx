@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import Footer from "../components/common/Footer";
 import { useParams } from "react-router-dom";
 import { apiConnector } from "../services/apiconnector";
-import { catalogData, categories } from "../services/apis";
+import { categories } from "../services/apis";
 import { getCatalogPageData } from "../services/operations/PageAndComponentData";
 import Course_card from "../components/core/Catalog/Course_card";
 import CourseSlider from "../components/core/Catalog/CourseSlider";
+import Spinner from "../components/common/Spinner";
 
 const Catalog = () => {
   const { catalogName } = useParams();
@@ -61,7 +62,7 @@ const Catalog = () => {
     }
   })();
 
-  if (!categoryId) return <div className="text-white p-10">Loading...</div>;
+  if (!categoryId) return <Spinner />;
 
   return (
     <div className="text-white">

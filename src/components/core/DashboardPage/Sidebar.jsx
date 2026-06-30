@@ -7,6 +7,7 @@ import { logout } from "../../../services/operations/authAPI";
 import { useState } from "react";
 import { VscSignOut } from "react-icons/vsc";
 import ConfirmationModal from "../../common/ConfirmationModal";
+import Spinner from "../../common/Spinner";
 
 const Sidebar = () => {
   const { user, loading: profileLoading } = useSelector(
@@ -18,7 +19,7 @@ const Sidebar = () => {
   const [confirmationModal, setConfirmationModal] = useState(null);
 
   if (profileLoading || authLoading) {
-    return <div className="mt-10 mx-auto">Loading...</div>;
+    return <Spinner />;
   }
 
   return (

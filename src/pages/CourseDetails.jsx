@@ -17,6 +17,7 @@ import { buyCourse } from "../services/operations/StudentFeatureAPI";
 import { addToCart } from "../slices/cartSlice";
 import copy from "copy-text-to-clipboard";
 import { ACCOUNT_TYPE } from "../utils/constants";
+import Spinner from "../components/common/Spinner";
 
 const { COURSE_DETAILS_API } = courseEndpoints;
 
@@ -148,14 +149,7 @@ const CourseDetails = () => {
   };
 
   if (loading) {
-    return (
-      <div className="flex items-center justify-center min-h-screen bg-richblack-900">
-        <div className="flex flex-col items-center gap-4">
-          <div className="w-12 h-12 border-4 border-yellow-50 border-t-transparent rounded-full animate-spin" />
-          <p className="text-richblack-300 text-sm">Loading course details…</p>
-        </div>
-      </div>
-    );
+    return <Spinner />;
   }
 
   if (!course) {
