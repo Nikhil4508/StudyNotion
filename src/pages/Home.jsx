@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import HighlightText from "../components/core/HomePage/HighlightText";
 import CTAButton from "../components/core/HomePage/CTAButton";
 import Banner from "../assets/video2.mp4";
-import BannerThumbnail from "../assets/videoThumbnail.jpg"; 
+import BannerThumbnail from "../assets/videoThumbnail.png";
 import CodeBlocks from "../components/core/HomePage/CodeBlocks";
 import "../App.css";
 import TimeLineSection from "../components/core/HomePage/TimeLineSection";
