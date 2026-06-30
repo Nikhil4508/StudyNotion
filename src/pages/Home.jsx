@@ -50,6 +50,8 @@ const Home = () => {
         <div className="mt-14 lg:shadow-card-1 w-full pr-3 sm:px-4 md:px-8 lg:px-0">
           <video
             className="w-full h-auto max-w-full object-contain md:shadow-card-1 shadow-card-4"
+            preload="none"
+            loading="lazy"
             muted
             loop
             autoPlay
