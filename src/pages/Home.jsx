@@ -48,9 +48,14 @@ const Home = () => {
           </CTAButton>
         </div>
 
-        <div className="mt-14 lg:shadow-card-1 w-full pr-3 sm:px-4 md:px-8 lg:px-0">
+        <div className="relative mt-14 lg:shadow-card-1 w-full pr-3 sm:px-4 md:px-8 lg:px-0">
+          {/* glowing effect */}
+          <div
+            className={`absolute z-0 left-1/2 top-14 -translate-x-1/2 -translate-y-1/6 h-[200px] w-[80%] max-w-[500px] rounded-full pointer-events-none  bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-600 opacity-40 blur-[150px]`}
+          ></div>
+
           <video
-            className="w-full h-auto max-w-full object-contain md:shadow-card-1 shadow-card-4"
+            className="relative z-10 w-full h-auto max-w-full object-contain md:shadow-card-1 shadow-card-4"
             preload="none"
             loading="lazy"
             poster={BannerThumbnail}
