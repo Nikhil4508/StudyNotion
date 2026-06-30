@@ -2,7 +2,7 @@ import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation , FreeMode, Pagination } from 'swiper/modules';
 import 'swiper/css';
-import "swiper/css/free-mode"
+// import "swiper/css/free-mode"
 import "swiper/css/pagination"
 
 import Course_card from './Course_card';
@@ -30,7 +30,7 @@ const CourseSlider = ({courses}) => {
             }}
             // navigation={true}
             pagination={{ clickable: true }}
-            freeMode={true}
+            // freeMode={true}
           > 
             {
               courses.map((course,index) => (

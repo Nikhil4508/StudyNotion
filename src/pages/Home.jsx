@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import HighlightText from "../components/core/HomePage/HighlightText";
 import CTAButton from "../components/core/HomePage/CTAButton";
 import Banner from "../assets/video2.mp4";
+import BannerThumbnail from "../assets/videoThumbnail.jpg"; 
 import CodeBlocks from "../components/core/HomePage/CodeBlocks";
 import "../App.css";
 import TimeLineSection from "../components/core/HomePage/TimeLineSection";
@@ -52,6 +53,7 @@ const Home = () => {
             className="w-full h-auto max-w-full object-contain md:shadow-card-1 shadow-card-4"
             preload="none"
             loading="lazy"
+            poster={BannerThumbnail}
             muted
             loop
             autoPlay
