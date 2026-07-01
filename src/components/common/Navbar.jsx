@@ -11,7 +11,6 @@ import { apiConnector } from "../../services/apiconnector";
 import { categories } from "../../services/apis";
 import { IoIosArrowDown } from "react-icons/io";
 
-// can you make sidebar at the bottom  with only icon in which active icon should be yellow and other richblack-300 only for small devices  
 
 const Navbar = () => {
   const { token } = useSelector((state) => state.auth);
@@ -21,6 +20,7 @@ const Navbar = () => {
   const [loading, setLoading] = useState(false);
   const [subLinks, setSubLinks] = useState([]);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [catalogOpen, setCatalogOpen] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -66,10 +66,20 @@ const Navbar = () => {
             {navbarLinks.map((link, index) => (
               <li className="" key={index}>
                 {link.title === "Catalog" ? (
-                  <div className="flex items-center gap-1 group relative">
+                  <div
+                    className="flex items-center gap-1 group relative cursor-pointer"
+                    onMouseEnter={() => setCatalogOpen(true)}
+                    onMouseLeave={() => setCatalogOpen(false)}
+                  >
                     <p className="">{link.title}</p>
                     <IoIosArrowDown size={20} />
-                    <div className="invisible absolute left-[50%] top-[50%] translate-x-[-50%] flex flex-col rounded-md bg-richblack-5 p-4 text-richblack-900 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 w-88  mt-7 z-11">
+                    <div
+                      className={`absolute left-[50%] top-[50%] translate-x-[-50%] flex flex-col rounded-md bg-richblack-5 p-4 text-richblack-900 transition-all duration-200 w-88 mt-7 z-11 ${
+                        catalogOpen
+                          ? "visible opacity-100"
+                          : "invisible opacity-0"
+                      }`}
+                    >
                       <div className="absolute w-15 h-15 left-[50%] top-0 translate-x-[-50%] rotate-45 bg-richblack-5 rounded -z-10"></div>
                       <div className="flex flex-col gap-4">
                         {subLinks.length ? (
@@ -85,6 +95,7 @@ const Navbar = () => {
                                   .join("-")
                                   .toLowerCase()}`}
                                 key={idx}
+                                onClick={() => setCatalogOpen(false)}
                               >
                                 {element.name}
                               </Link>
